@@ -6,8 +6,9 @@ const CustomLink = ({ href, ...rest }) => {
   const isAnchorLink = href && href.startsWith('#')
 
   if (isInternalLink) {
+    // using legacyBehavior to avoid 'Error: Invalid <Link> with <a> child'
     return (
-      <Link href={href}>
+      <Link href={href} legacyBehavior>
         <a {...rest} />
       </Link>
     )
