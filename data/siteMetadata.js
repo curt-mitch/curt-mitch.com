@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Curtis Mitchell',
   headerTitle: 'Curt-Mitch.com',
   description:
-    'A personal blog at the intersection of machine learning, privacy, and mathematics with a dash of web development',
+    'A personal blog at the intersection of software engineering, machine learning, and privacy-enhancing technologies',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
