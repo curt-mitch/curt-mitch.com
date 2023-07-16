@@ -1,15 +1,10 @@
-![tailwind-nextjs-banner](/public/static/images/twitter-card.png)
+![marvelous-balance-banner](/public/static/images/marvelous-balance-logo.png)
 
-# Tailwind Nextjs Starter Blog
+# Curt-Mitch.com Blog - A Marvelous Balance
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/timlrx/tailwind-nextjs-starter-blog?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/stargazers/)
-[![GitHub forks](https://img.shields.io/github/forks/timlrx/tailwind-nextjs-starter-blog?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/network/)
-[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftimlrxx)](https://twitter.com/timlrxx)
-[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/timlrx)](https://github.com/sponsors/timlrx)
+This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/)-based blogging site based on the [Tailwind-Nextjs Starter Blog Template](https://github.com/timlrx/tailwind-nextjs-starter-blog/).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/timlrx/tailwind-nextjs-starter-blog)
-
-This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) blogging starter template. Probably the most feature-rich Next.js markdown blogging template out there. Comes out of the box configured with the latest technologies to make technical writing a breeze. Easily configurable and customizable. Perfect as a replacement to existing Jekyll and Hugo individual blogs.
+Original Framework README content:
 
 Check out the documentation below to get started.
 
@@ -238,7 +233,7 @@ Follow the interactive prompt to generate a post with pre-filled front matter.
 
 ## Deploy
 
-**Vercel**  
+**Vercel**
 The easiest way to deploy the template is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 **Netlify**
@@ -246,7 +241,7 @@ The easiest way to deploy the template is to use the [Vercel Platform](https://v
 
 See [Next.js on Netlify](https://docs.netlify.com/integrations/frameworks/next-js/overview/#next-js-runtime) for suggested configuration values and more details.
 
-**GitHub Pages / Firebase etc.**  
+**GitHub Pages / Firebase etc.**
 As the template uses `next/image` for image optimization, additional configurations have to be made to deploy on other popular static hosting websites like [Firebase](https://firebase.google.com/) or [GitHub Pages](https://pages.github.com/). An alternative image optimization provider such as Imgix, Cloudinary or Akamai has to be used. Alternatively, replace the `next/image` component with a standard `<img>` tag. See [`next/image` documentation](https://nextjs.org/docs/basic-features/image-optimization) for more details.
 
 The API routes used in the newsletter component cannot be used in a static site export. You will need to use a form API endpoint provider and substitute the route in the newsletter component accordingly. Other hosting platforms such as Netlify also offer alternative solutions - please refer to their docs for more information.
