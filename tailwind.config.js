@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   experimental: {
     optimizeUniversalDefaults: true,
@@ -11,8 +12,8 @@ module.exports = {
     './layouts/**/*.js',
     './lib/**/*.js',
     './data/**/*.mdx',
-    './pages/**/*.ts',
-    './components/**/*.ts',
+    './pages/**/*.tsx',
+    './components/**/*.tsx',
     './layouts/**/*.tsx',
     './lib/**/*.ts',
   ],
