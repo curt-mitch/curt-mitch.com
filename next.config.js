@@ -1,3 +1,5 @@
+// @ts-check
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -52,9 +54,12 @@ const securityHeaders = [
   },
 ]
 
-module.exports = withBundleAnalyzer({
+/**
+ * @type {import('next').NextConfig}
+ **/
+const nextConfig = withBundleAnalyzer({
   reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
@@ -85,3 +90,5 @@ module.exports = withBundleAnalyzer({
     return config
   },
 })
+
+module.exports = nextConfig
