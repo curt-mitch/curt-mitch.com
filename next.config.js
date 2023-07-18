@@ -6,6 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
+  https://scripts.simpleanalyticscdn.com; connect-src 'self'
+  https://queue.simpleanalyticscdn.com; img-src 'self'
+  https://queue.simpleanalyticscdn.com https://simpleanalyticsbadges.com;
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
   style-src 'self' 'unsafe-inline';
@@ -14,9 +17,6 @@ const ContentSecurityPolicy = `
   connect-src *;
   font-src 'self';
   frame-src giscus.app
-  https://scripts.simpleanalyticscdn.com; connect-src 'self'
-  https://queue.simpleanalyticscdn.com; img-src 'self'
-  https://queue.simpleanalyticscdn.com https://simpleanalyticsbadges.com;
 `
 
 const securityHeaders = [
