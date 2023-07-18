@@ -14,6 +14,9 @@ const ContentSecurityPolicy = `
   connect-src *;
   font-src 'self';
   frame-src giscus.app
+  https://scripts.simpleanalyticscdn.com; connect-src 'self'
+  https://queue.simpleanalyticscdn.com; img-src 'self'
+  https://queue.simpleanalyticscdn.com https://simpleanalyticsbadges.com;
 `
 
 const securityHeaders = [
