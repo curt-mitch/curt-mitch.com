@@ -1,7 +1,7 @@
 ---
 title: 'Updated and Improved Website'
 date: '2023-07-16'
-tags: ['website', 'next-js', 'web-hosting']
+tags: ['website', 'next-js', 'vercel']
 draft: false
 summary: 'Migrating the website to Next.js and Vercel'
 ---
@@ -39,6 +39,18 @@ backend I hosted on DigitalOcean that allowed me to support APIs for my Japanese
 translation and Urdu numeral-recognition systems, but I may try to find a way to restore
 support for these in the future. As is, they were used very little and their large sizes meant I
 was paying more than $20 per month in cloud usage fees.
+
+I don't mean for this to sound like a knock on DigitalOcean. On the contrary, it is a great
+platform that helped me learn some dev ops basics such as setting up and maintaining a Linux box
+for deploying a web application, as well as some more complicated processes such as configuring
+[NGINX](https://nginx.com), [Let's Encrypt](https://letsencrypt.org), and other services to
+enable a modern web application. They also have some of the best online [documentation and
+tutorials](https://docs.digitalocean.com) for setting up and maintaining cloud applications
+and dependencies. They'll continue to be one of my top choices for cloud providers in future
+projects. But it is hard to beat the convenience of a serverless architecture for a personal
+blog, and especially when that includes Vercel's integrations and support for a Next.js
+codebase hosted on Github that has a generous [free tier](https://vercel.com/pricing) for
+personal projects.
 
 Lastly, I also took some time with this refactor to do a little branding. The [golden
 ratio](https://en.wikipedia.org/wiki/Golden_ratio) (φ) is one of my favorite mathematical
