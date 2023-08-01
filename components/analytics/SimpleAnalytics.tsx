@@ -8,7 +8,12 @@ const SimpleAnalyticsScript = () => {
             window.sa_event=window.sa_event||function(){var a=[].slice.call(arguments);window.sa_event.q?window.sa_event.q.push(a):window.sa_event.q=[a]};
         `}
       </Script>
-      <Script strategy="lazyOnload" src="https://scripts.simpleanalyticscdn.com/latest.js" />
+      <Script
+        async
+        defer
+        strategy="lazyOnload"
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      />
       <noscript>
         {/* eslint-disable @next/next/no-img-element */}
         <img
