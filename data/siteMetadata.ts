@@ -6,8 +6,8 @@ const siteMetadata = {
     'A personal blog at the intersection of software engineering, machine learning, and privacy-enhancing technologies',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://curt-mitch.com',
+  siteRepo: 'https://github.com/curt-mitch/curt-mitch.com/',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/marvelous-balance-logo.png',
