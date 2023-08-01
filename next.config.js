@@ -8,7 +8,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const ContentSecurityPolicy = `
   default-src 'self' *.plausible.io;
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
@@ -16,6 +15,8 @@ const ContentSecurityPolicy = `
   font-src 'self';
   frame-src giscus.app
 `
+// removed giscus content
+//   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
