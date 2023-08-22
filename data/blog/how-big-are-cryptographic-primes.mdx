@@ -55,14 +55,14 @@ it would still be difficult to find factors for such a large number, and because
 modern cryptographic processes that use these large numbers will find new numbers after
 some brief amount of time, usually on the order of a few minutes to several hours.
 
-For the second, probablistic test to determine if our candidate number is prime,
-there are [several other probabilistic tests](https://en.wikipedia.org/wiki/List_of_number_theory_topics#Primality_tests)
+For the second test to determine if our candidate is highly likely to be prime,
+there are [several tests](https://en.wikipedia.org/wiki/List_of_number_theory_topics#Primality_tests)
 available. These tests rely heavily on [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic)
 and properties such as [congruence](https://en.wikipedia.org/wiki/Congruence_relation),
 in which more than one number have the same remainder when divided by a particular
 integer. The Miller-Rabin Test is the most widely used of these tests, and it works by
 selecting a random number between 2 and 1 minus our candidate prime, and then checking if
-the number is a composite or (probably) a prime number by running through one or more
+the number is a divisor of our candidate number by running through one or more
 calculations of congruence relations. It does these checks in a relatively fast manner
 and to a high degree of certainty compared to other primality tests, hence its
 popularity in modern cryptographic protocols. The details of the test's calculations are beyond
