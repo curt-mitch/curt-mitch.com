@@ -55,17 +55,18 @@ it would still be difficult to find factors for such a large number, and because
 modern cryptographic processes that use these large numbers will find new numbers after
 some brief amount of time, usually on the order of a few minutes to several hours.
 
-We'll focus on the widely-used Miller-Rabin Test here, but there are [several other probabilistic tests](https://en.wikipedia.org/wiki/List_of_number_theory_topics#Primality_tests)
-for finding large primes. These tests rely heavily on [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic)
+For the second, probablistic test to determine if our candidate number is prime,
+there are [several other probabilistic tests](https://en.wikipedia.org/wiki/List_of_number_theory_topics#Primality_tests)
+available. These tests rely heavily on [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic)
 and properties such as [congruence](https://en.wikipedia.org/wiki/Congruence_relation),
 in which more than one number have the same remainder when divided by a particular
-integer.
-
-The Miller-Rabin Test itself runs by selecting a random number between 2 and 1 minus
-our candidate prime, and then checks if the number is a composite or (probably) a
-prime number by running through one or more calculations of congruence relations.
-The details of the calculations are beyond the scope of this post, but I have some
-links to more detailed resources below.
+integer. The Miller-Rabin Test is the most widely used of these tests, and it works by
+selecting a random number between 2 and 1 minus our candidate prime, and then checking if
+the number is a composite or (probably) a prime number by running through one or more
+calculations of congruence relations. It does these checks in a relatively fast manner
+and to a high degree of certainty compared to other primality tests, hence its
+popularity in modern cryptographic protocols. The details of the test's calculations are beyond
+the scope of this post, but I have some links to more detailed resources below.
 
 To describe our algorithm for finding large prime numbers from a high level, here's
 what steps we take:
