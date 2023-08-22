@@ -7,7 +7,7 @@ summary: 'A look at the size and characteristics of cryptographic primes'
 ---
 
 During the height of the pandemic when I was between jobs, I attended a webinar
-on basic cryptography principles given by a security engineer. While the
+on cryptography principles given by a security engineer. While the
 speaker was detailing how public-private key cryptography works, she described
 the primes used to create these keys as “very big”. When I raised my Zoom hand
 to ask if she could describe how big these primes are, the speaker said
@@ -20,7 +20,7 @@ modern cryptography.
 
 The short answer is that the exact size depends on the cryptographic algorithm
 being used, but the general [best practice as of 2023](https://weakdh.org/) is to use
-a 2,048-bit prime number for methods like the Diffie-Hellman key exchange algorithm.
+a 2048-bit prime number for methods like the Diffie-Hellman key exchange algorithm.
 To give a visual representation of that, here is a (approximately) 2048-bit number
 derived using Python's cryptographic [`getPrime`](https://pycryptodome.readthedocs.io/en/latest/src/util/util.html#Crypto.Util.number.getPrime)
 method:
@@ -29,7 +29,7 @@ method:
 
 This number is 617 digits long. That length is based on the fact that we've converted
 a 2048-bit binary number (“bit” is short for “binary digit”) to a decimal (base 10)
-digit. To get from a value of 2048 binary digits, we will have at most $kn$ decimal
+digit. To get from a value of 2,048 binary digits, we will have at most $kn$ decimal
 digits, where $k = log_{10} 2$, or about 0.301, and $n$ is the number of binary digits.
 Thus, rounding up 2048 times 0.301 to the nearest whole integer gives us 617.
 
@@ -45,25 +45,24 @@ prime number.
 The first of these tests is to divide that number by a list of the first few hundred
 prime numbers. If any of those “small” primes can evenly divide the randomly-generated
 candidate number, then we know it's a composite number (a number with multiple factors
-besides itself and 1), not a prime, and the entire process restarts. If the candidate
-number cannot be evenly divided by any of these smaller primes, we move onto a second,
-more complicated and probabilistic test that doesn't tell us with 100% certainty that
-a number is a large prime, but can get us within an acceptable level of confidence that
-we have found a large prime number. In practice it's usually acceptable to find a
-number that is _probably_ prime because it would still be difficult to find factors for
-such a large number, and because most modern cryptographic processes that use these
-large numbers will find new numbers after some brief amount of time, usually on the
-order of a few minutes to several hours.
+besides itself and 1), not a prime, and the entire process restarts with a new,
+randomly-generated number. If the candidate number cannot be evenly divided by any of
+these smaller primes, we move onto a second, more complicated and probabilistic test
+that doesn't tell us with 100% certainty that a number is a large prime, but can get us
+within an acceptable level of confidence that we have found a large prime number.
+In practice it's usually acceptable to find a number that is _probably_ prime because
+it would still be difficult to find factors for such a large number, and because most
+modern cryptographic processes that use these large numbers will find new numbers after
+some brief amount of time, usually on the order of a few minutes to several hours.
 
-For illustrative purposes we'll focus on the widely-used Miller-Rabin Test here, but
-there are [several other probabilistic tests](https://en.wikipedia.org/wiki/List_of_number_theory_topics#Primality_tests)
+We'll focus on the widely-used Miller-Rabin Test here, but there are [several other probabilistic tests](https://en.wikipedia.org/wiki/List_of_number_theory_topics#Primality_tests)
 for finding large primes. These tests rely heavily on [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic)
 and properties such as [congruence](https://en.wikipedia.org/wiki/Congruence_relation),
-the case when more than one number have the same remainder when divided by a particular
+in which more than one number have the same remainder when divided by a particular
 integer.
 
 The Miller-Rabin Test itself runs by selecting a random number between 2 and 1 minus
-our candidate prime, and then checking if the number is a composite or (probably) a
+our candidate prime, and then checks if the number is a composite or (probably) a
 prime number by running through one or more calculations of congruence relations.
 The details of the calculations are beyond the scope of this post, but I have some
 links to more detailed resources below.
@@ -90,13 +89,15 @@ Thanks to the [prime number theorem](https://en.wikipedia.org/wiki/Prime_number_
 we can roughly (but still quantitatively) determine the distribution of prime numbers
 amongst a range of all integers using the formula $π(N) \sim \frac{N}{ln(N)}$, which also gives
 us the count of prime numbers up to the number $N$ using the [prime-counting function](https://en.wikipedia.org/wiki/Prime-counting_function)
-$π(N)$. Using it to find the number of primes of exactly 2048 digits (in binary), let alone primes
+$π(N)$. Using it to find the number of primes of exactly 2048 bits, let alone primes
 of other sizes, gives us more than $10^{600}$. This is significantly greater than the
 estimate for the number of atoms in the known universe, which is currently around $10^{80}$, and hence
-why storing all of these numbers would be against the laws of physics. Such a gigantic number
+storing all of these numbers would be against the laws of physics. Such a gigantic amount
 of possible prime numbers also makes collisions (i.e., creating the same prime number
-more than once) effectively impossible. Finding these primes to break a cryptographic
-protocol such as the RSA algorithm is hopeless for even the most powerful supercomputers.
+more than once) effectively impossible. Finding one specific prime to break a cryptographic
+protocol such as the RSA algorithm is hopeless for even the most powerful supercomputers,
+even if the protocols that use these prime numbers weren't switching to new large primes every
+few minutes or hours.
 
 ## Summary
 
