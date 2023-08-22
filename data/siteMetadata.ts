@@ -12,7 +12,7 @@ const siteMetadata = {
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/marvelous-balance-logo.png',
   email: 'curtis.l.mitchell@gmail.com',
-  twitter: 'https://twitter.com/curt-mitch',
+  twitter: 'https://twitter.com/curt_mitch',
   linkedin: 'https://www.linkedin.com/in/curtislmitchell/',
   github: 'https://github.com/curt-mitch',
   locale: 'en-US',
