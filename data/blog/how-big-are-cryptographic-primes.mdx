@@ -1,7 +1,7 @@
 ---
 title: 'How Big Are the Prime Numbers Used in Cryptography?'
 date: '2023-08-22'
-tags: ['cyptography', 'mathematics', 'number theory']
+tags: ['cryptography', 'mathematics', 'number theory']
 draft: false
 summary: 'A look at the size and characteristics of cryptographic primes'
 ---
@@ -31,7 +31,7 @@ This number is 617 digits long. That length is based on the fact that we've conv
 a 2048-bit binary number (“bit” is short for “binary digit”) to a decimal (base 10)
 digit. To get from a value of 2,048 binary digits, we will have at most $kn$ decimal
 digits, where $k = log_{10} 2$, or about 0.301, and $n$ is the number of binary digits.
-Thus, rounding up 2048 times 0.301 to the nearest whole integer gives us 617.
+Thus, 2048 times 0.301 rounded up to the nearest whole integer gives us 617.
 
 ## How do we find these numbers?
 
@@ -62,7 +62,7 @@ and properties such as [congruence](https://en.wikipedia.org/wiki/Congruence_rel
 in which more than one number have the same remainder when divided by a particular
 integer. The [Miller-Rabin Test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test) is the most widely used of these tests, and it works by
 selecting a random number between 2 and 1 minus our candidate prime, and then checking if
-the number is a divisor of our candidate number by running through one or more
+that number is a divisor of our candidate number by running through one or more
 calculations of congruence relations. It does these checks in a relatively fast manner
 and to a high degree of certainty compared to other primality tests, hence its
 popularity in modern cryptographic protocols. The details of the test's calculations are beyond
@@ -112,7 +112,7 @@ the first place. But that will have to be the subject of a future post. Stay tun
 
 [Cryptographic Key Length Recommendations](https://www.keylength.com/)
 
-Cyptography Stack Exchange: [How can I generate large prime numbers for RSA?](https://crypto.stackexchange.com/questions/71/how-can-i-generate-large-prime-numbers-for-rsa)
+Cryptography Stack Exchange: [How can I generate large prime numbers for RSA?](https://crypto.stackexchange.com/questions/71/how-can-i-generate-large-prime-numbers-for-rsa)
 
 Medium: [Finding Large Primes for Public Key Cryptography - The Miller-Rabin primality
 test](https://ghenshaw-work.medium.com/finding-large-primes-for-public-key-cryptography-9c5a5c0d32c4)
